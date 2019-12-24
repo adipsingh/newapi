@@ -1,0 +1,40 @@
+.img-preview {
+    position: relative;
+    cursor: move;
+    padding: 10px;
+    margin: 10px 5px 10px 0;
+    height: 140px;
+    min-width: 120px;
+    background: rgba(0,0,0,0.5);
+}
+.files-wrapper.highlight {
+    border-color: #3f51b5;
+}
+
+#fileElem {
+    display: none;
+}
+
+.img-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    place-content: start start;
+    position: relative;
+    height: 200px;
+    overflow: auto;
+}
+.clearfix
+{
+    clear:both;
+}
+.mat-flat-button.mat-accent[disabled]
+{
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    
+}
+
+@media (max-width: 767px){
+    .width-65.r-upload {
+        width: 95%;
+    }
+}

@@ -1,0 +1,54 @@
+
+body {
+    margin: 0;
+    line-height: 1.4 !important;
+    letter-spacing: -0.1px !important;
+}
+
+html,
+body {
+    -webkit-font-smoothing: auto;
+    -moz-osx-font-smoothing: auto;
+}
+
+html,
+body,
+am-root {
+    height: 100%;
+}
+html.cdk-global-scrollblock{
+    overflow-y: auto;
+}
+.full-sc-height{
+    height: 100vh;
+}
+
+$primary-color:#2E71F0;
+
+$secondary-color:#E58E15;
+
+$facebook:#3b5998;
+
+$google-plus:#dc4e41;
+
+$twitter:#55acee; 
+$default-white:#fff;  
+$default-deep-gray:#ddd;
+$font-family-rc:Montserrat;
+
+.breadcrumb
+{
+    background: transparent;
+}
+
+.ellipsis {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 140px;
+    white-space: nowrap;
+}
+
+.cursor-pointer{
+    cursor:  pointer !important;
+}
+

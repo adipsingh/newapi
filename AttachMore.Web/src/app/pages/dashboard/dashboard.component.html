@@ -1,0 +1,127 @@
+<section class="bg-grey mt-120">
+  <div flexLayout>
+    <div class="bg-gray custm_dash">
+      <div class="container">
+        <div class="col-md-3 white-500-bg pr-0">
+          <div class="border bottom">
+            <div class="user_profile pdd-btm-30 pdd-top-30 width-100 inline-block">
+              <div class="user_img">
+                <img src="assets/images/main/admin.jpg" alt="User image" >
+              </div>
+              <div class="user_detail">
+                <h5 class="font-weight-500 m-0 mt-10 color-444">Hi David</h5>
+                <p class="mb-0 pdd-top-5">Administrator</p>
+              </div>
+            </div>
+          </div>
+          <div class="border bottom">
+            <p class="pdd-top-20 pdd-botttom-20 color-444 font-weight-500"><img src="assets/images/main/bell.png" alt="image"> &nbsp; Status: <span class="primary-500-fg">Active</span></p>
+          </div>
+          <div class="border bottom">
+            <p class="pdd-top-20 pdd-botttom-20 color-444 font-weight-500"><img src="assets/images/main/users.png" alt="image"> &nbsp; Sub Users: <span class="color-666">1 of 5</span></p>
+          </div>
+          <div class="border bottom">
+            <p class="pdd-top-20 pdd-botttom-20 color-444 font-weight-500"><img src="assets/images/main/billing.png" alt="image"> &nbsp; Next Billing:  <span class="color-666">01/01/18</span></p>
+          </div>
+          <div class="border bottom">
+            <p class="pdd-top-20 pdd-botttom-20 color-444 font-weight-500"><img src="assets/images/main/card.png" alt="image"> &nbsp; Card on File:  <span class="color-666">7575</span></p>
+          </div>
+          <div class="border bottom">
+            <p class="pdd-top-20 pdd-botttom-20 color-444 font-weight-500"><img src="assets/images/main/calender.png" alt="image"> &nbsp; Expires:  <span class="color-666">01/18</span></p>
+          </div>
+          <div class="">
+            <p class="pdd-top-20 pdd-botttom-20">
+              <button class="border-radius-0 main-font-family font-weight-normal mat-flat-button mat-primary" color="primary" mat-flat-button="" ng-reflect-color="primary"><span class="mat-button-wrapper">Update</span><div class="mat-button-ripple mat-ripple" matripple="" ng-reflect-centered="false"></div><div class="mat-button-focus-overlay"></div></button>
+            </p>
+          </div>
+        </div>
+        <div class="col-md-9 bg-gray pdd-left-30">
+          <h2 class="mt-24 mb-24 font-size-20 font-weight-semi-bold">Dashboard</h2>
+          <div class="row">
+            <div class="col-md-12 mb-30">
+              <mat-card>
+                <div class="pdd-btm-5 pdd-left-15 pdd-right-100 pdd-top-5">
+                  <h4 class="font-weight-semi-bold">Used {{dataUsage.usage}}GB of {{ dataUsage.totalData }}GB Storage Limit</h4>
+                  <p class="font-size-15 font-weight-500">The monthly upload limit refreshes to 10240.00MB in 11 days.<br>
+                    You can transfer 10240.00MB over the next 11 days.</p>
+                </div>
+                <div class="dash_img">
+                  <!-- <img src="assets/images/main/progress.png" alt="image" /> -->
+                  <mat-progress-spinner class="cstm_progress" color="primary" mode="determinate" value="{{dataUsage.usagePercentage}}">
+                  </mat-progress-spinner>
+                  <span class="data_used">
+                    {{dataUsage.usagePercentage}}%
+                  </span>
+                </div>
+              </mat-card>
+            </div>
+          </div>
+          <div class="row mb-30">
+            <div class="col-md-4" (click)="navigateToFileHistory()" style="cursor: pointer">
+              <mat-card>
+                <div class="p-5">
+                  <h2 class="font-weight-semi-bold pdd-btm-10 m-0 primary-500-fg font-size-35">{{dashboard?.uploads}}</h2>
+                  <h5 class="font-size-16 text-uppercase font-weight-500">Recent Uploads</h5>
+                  <p>Last 30 Days</p>
+                </div>
+                <div class="dash_img"><img src="assets/images/main/upload.png" alt="image" /></div>
+              </mat-card>
+            </div>
+            <div class="col-md-4">
+              <mat-card>
+                <div class="p-5">
+                  <h2 class="font-weight-semi-bold pdd-btm-10 m-0 primary-500-fg font-size-35">{{dashboard?.downloads}}</h2>
+                  <h5 class="font-size-16 text-uppercase font-weight-500">Recent Downloads</h5>
+                  <p>Last 30 Days</p>
+                </div>
+                <div class="dash_img"><img src="assets/images/main/download.png" alt="image" /></div>
+              </mat-card>
+            </div>
+            <div class="col-md-4">
+              <mat-card>
+                <div class="p-5">
+                  <h2 class="font-weight-semi-bold pdd-btm-10 m-0 primary-500-fg font-size-35">{{dashboard?.filesreceived}}</h2>
+                  <h5 class="font-size-16 text-uppercase font-weight-500">Files Received</h5>
+                  <p>Last 30 Days</p>
+                </div>
+                <div class="dash_img"><img src="assets/images/main/mail_rec.png" alt="image" /></div>
+              </mat-card>
+            </div>
+          </div>
+          <div class="row mb-30">
+            <div class="col-md-4">
+              <mat-card>
+                <div class="p-5">
+                  <h2 class="font-weight-semi-bold pdd-btm-10 m-0 primary-500-fg font-size-35">{{dashboard?.expiringlinks}}</h2>
+                  <h5 class="font-size-16 text-uppercase font-weight-500">Expiring Links</h5>
+                  <p>In the next 30 Days</p>
+                </div>
+                <div class="dash_img"><img src="assets/images/main/link.png" alt="image" /></div>
+              </mat-card>
+            </div>
+            <div class="col-md-4">
+              <mat-card>
+                <div class="p-5">
+                  <h2 class="font-weight-semi-bold pdd-btm-10 m-0 primary-500-fg font-size-35">{{dashboard?.filespurging}}</h2>
+                  <h5 class="font-size-16 text-uppercase font-weight-500">Files Purging</h5>
+                  <p>In the next 30 days</p>
+                </div>
+                <div class="dash_img"><img src="assets/images/main/file.png" alt="image" /></div>
+              </mat-card>
+            </div>
+            <div class="col-md-4">
+              <mat-card>
+                <div class="p-5">
+                  <h2 class="font-weight-semi-bold pdd-btm-10 m-0 primary-500-fg font-size-35">${{dashboard?.purchasedfiles}}</h2>
+                  <h5 class="font-size-16 text-uppercase font-weight-500">Purchased Files</h5>
+                  <p>Last 90 Days</p>
+                </div>
+                <div class="dash_img"><img src="assets/images/main/cart.png" alt="image" /></div>
+              </mat-card>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

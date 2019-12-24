@@ -1,0 +1,58 @@
+.heading-1:before {
+    background-color: transparent;
+}
+.font-weight-500{
+    font-weight: 500;
+}
+.color-444{
+    color: #444444 !important;
+}
+.color-666{
+    color: #666666 !important;
+}
+.custm_dash{
+    position: relative;
+}
+.custm_dash:before{
+    content: "";
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 45%;
+    height: 100%;
+    background: #fff;
+}
+.attachment_status {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 5px;
+    font-size: 10px;
+    border: 1px solid;
+    padding: 1px 4px 0;
+    border-radius: 2px;
+}
+
+.active.attachment_status {
+    border-color: #5fb028;
+    color: #5fb028;
+}
+
+.attachment_status.expired {
+    border-color: #fb0e0e;
+    color: #fb0e0e;
+}
+.mat-checkbox-frame{
+    border: 1px solid #ccc !important;
+}
+.expiry-tab .mat-form-field {
+    width: 28%
+}
+.heading-1.WhiteBg:before {
+    background-color: #fff !important;
+}
+.cstm_readmore{
+    position: absolute;
+    top: 0;
+    right: 0;
+}

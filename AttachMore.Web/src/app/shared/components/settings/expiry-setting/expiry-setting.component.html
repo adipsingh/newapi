@@ -1,0 +1,34 @@
+
+<form class="mrg-top-20" [formGroup]="expirySettingForm" (ngSubmit)="onSubmit()">
+  <div class="text-center form-group">
+    <label>Number of downloads</label>
+    <select class="form-control width-30 display-inline mrg-left-10" formControlName="downloadsLimit">
+      <option value="5">5</option>
+      <option value="4">4</option>
+      <option value="3">3</option>
+      <option value="2">2</option>
+      <option value="1">1</option>
+    </select>
+  </div>
+
+  <div class="text-center form-group mrg-top-20">
+    <label>Expires after</label>
+    <div class="form-group width-30 display-inline mrg-left-10">
+        <input type="text" class="form-control" placeholder="yyyy-mm-dd" bsDatepicker
+          formControlName="expiryDate" [minDate]="minDate"/>
+      
+    </div>
+  </div>
+  <div class="text-center form-group">
+    <label>Delete Date</label>
+    <div class="form-group width-30 display-inline mrg-left-10">
+     
+        <input type="text" class="form-control" placeholder="yyyy-mm-dd" bsDatepicker 
+          formControlName="deletionDate" [minDate]="minDate" >
+  
+    </div>
+  </div>
+  <div fxLayoutAlign="center mrg-top-10">
+    <button mat-flat-button color="accent" class="white-500-fg border-radius-0">Save</button>
+  </div>
+</form>

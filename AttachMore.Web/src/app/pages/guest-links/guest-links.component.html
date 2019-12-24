@@ -1,0 +1,54 @@
+<section class="bg-grey mt-100">
+  <div class="container">
+      <div class="row">
+          <div class="col-md-12">
+              <h3 class="display-inline mrg-top-10">Guest Links</h3>
+  <form class="pull-right display-inline">
+    <label>Name Guest Link</label>
+    <input type="text" placeholder="Enter Name" class="mrg-left-10 form-control width-40 display-inline" [formControl]="linkName">
+    <button mat-flat-button color="primary" class="border-radius-0  white-500-fg mrg-left-10 " (click)="createGuestLink()">
+      Create Guest Link</button> </form>
+            </div>
+      </div>
+  </div>
+  <div flexLayout>
+    <div class="bg-gray custm_dash">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="card padding-30 mrg-top-20">
+              <div class="table-responsive">
+                <table class="table table-hover">
+                  <thead>
+                    <tr>
+                      <th>Link Name</th>
+                      <th>Create Date</th>
+                      <th>Expire date</th>
+                      <th>Status</th>
+                      <th>Usage</th>
+                      <th>Options</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let guestLink of guestLinks">
+                      <td>{{ guestLink.linkName }}</td>
+                      <td>{{ guestLink.creationDate | date }}</td>
+                      <td>{{ guestLink.expirySettings.expirationDate | date }}</td>
+                      <td>{{ guestLink.status }}</td>
+                      <td>2 of 5</td>
+                      <td>
+                        <a class="text-behance"> View Files |</a>
+                        <a class="text-behance"> Disable |</a>
+                        <a class="text-behance pdd-top-10"><i class="fa fa-edit pdd-right-5"></i> </a>
+                      </td>
+                    </tr>                 
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

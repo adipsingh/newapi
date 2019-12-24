@@ -1,0 +1,41 @@
+<form class="mt-16" fxLayout="column" [formGroup]="notificationSettingForm" (ngSubmit)="onSubmit()">
+  <div class="mrg-horizon-auto optionsItems">
+    <mat-slide-toggle class="mrg-right-auto pdd-btm-40" labelPosition="before" formControlName="whenDownload">When
+      downloaded</mat-slide-toggle>
+    <mat-slide-toggle class="mrg-right-auto pdd-btm-40" labelPosition="before" formControlName="whenExpired">When
+      expired</mat-slide-toggle><br>
+    <mat-slide-toggle class="mrg-right-auto pdd-btm-40 relative" labelPosition="before" formControlName="byEmail">By
+      email<span class="notify_mail theme-color">abc@gmail.com</span></mat-slide-toggle><br>
+    <mat-slide-toggle class="mrg-right-auto  pdd-btm-40" labelPosition="before" formControlName="byText">By text
+    </mat-slide-toggle>
+  </div>
+
+    <div class="add_more_btn" formArrayName="notifyInfo">
+      <ng-container *ngFor="let item of notifyInfoArray.controls; let i=index" [formGroupName]="i">
+        <div>
+            <mat-checkbox></mat-checkbox>
+          <select class="form-control display-inline mrg-left-10 width95" formControlName="notifyType">
+            <option value="5">email</option>
+            <option value="4">text</option>
+          </select>
+          <span class="to">to</span>
+          <input type="email" formControlName="NotiicationSendOn" class="form-control display-inline"
+            placeholder="email address" name="email address">
+            
+            <span class="to" matTooltip="Delete" (click)="removeItemFromNotifyInfoArray(i)"><i class="ei ei-close"></i></span>
+        </div>
+      </ng-container>
+    </div>
+    <div fxlayoutalign="center" *ngIf="notifyInfoArray.length < config.addMoreLimit"> 
+        <button mat-stroked-button type="button"  (click)="addNotifyInfoControls()"
+        class="pdd-left-5 pdd-right-10 theme-color border-radius-0 mrg-top-20 width-20">
+        <mat-icon>add</mat-icon> Add More
+      </button>
+    </div>
+
+  
+
+  <div fxLayoutAlign="center" class="mrg-top-20">
+    <button mat-flat-button color="accent" class="white-500-fg border-radius-0">Save</button>
+  </div>
+</form>

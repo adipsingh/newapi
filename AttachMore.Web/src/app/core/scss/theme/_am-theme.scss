@@ -1,0 +1,59 @@
+@import '~@angular/material/theming';
+
+$mat-white: (
+    500: white,
+    contrast: (
+        500: $black-87-opacity
+    )
+);
+
+$mat-black: (
+    500: black,
+    contrast: (
+        500: white,
+    )
+);
+
+$am-deep-red: (
+    50: #f9ecef,
+    100: #f2cfd5,
+    200: #dc9da2,
+    300: #cc7a80,
+    400: #d55f64,
+    500: #d95251,
+    600: #ca4a4e,
+    700: #b84247,
+    800: #aa3d40,
+    900: #993737,
+    A100: #eebfd8,
+    A200: #e697bf,
+    A400: #da5691,
+    A700: #af3b70,
+    contrast: (
+        50: $black-87-opacity,
+        100: $black-87-opacity,
+        200: $black-87-opacity,
+        300: white,
+        400: white,
+        500: $white-87-opacity,
+        600: $white-87-opacity,
+        700: $white-87-opacity,
+        800: $white-87-opacity,
+        900: $white-87-opacity,
+        A100: $black-87-opacity,
+        A200: $white-87-opacity,
+        A400: $white-87-opacity,
+        A700: $white-87-opacity,
+    )
+);
+
+// Palettes
+$am-primary: mat-palette($mat-indigo);
+$am-accent: mat-palette($mat-orange, A200, A100, A400);
+$am-warn: mat-palette($mat-red);
+
+// Create the theme object (a Sass map containing all of the palettes).
+$am-theme: mat-light-theme($am-primary, $am-accent, $am-warn);
+
+$background: map-get($am-theme, background);
+$foreground: map-get($am-theme, foreground);

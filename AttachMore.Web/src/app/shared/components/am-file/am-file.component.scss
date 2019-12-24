@@ -1,0 +1,49 @@
+.img-preview {
+    background: #cee8ff;
+    position: relative;
+    cursor: move;
+    padding: 10px;
+    margin: 10px 5px;
+    min-height: 140px;
+    min-width: 120px;
+    img {
+        background: #ddd;
+    }
+}
+
+.mat-icon-button {
+    line-height: 20px;
+    width: 19px;
+    height: 20px;
+}
+
+.mat-icon-button .mat-icon,
+.mat-icon-button i {
+    line-height: 10px;
+}
+
+.file-name {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 48px;
+}
+/* width */
+::-webkit-scrollbar {
+    width: 2px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+}

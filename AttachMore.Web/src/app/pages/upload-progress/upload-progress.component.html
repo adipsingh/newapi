@@ -1,0 +1,23 @@
+<div class="fs-hero hero-img pdd-btm-30" style="background-image: url(assets/images/bg/bg1.jpg)">
+    <div class="dark-overlay">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 mrg-top-95 text-center ">
+                <div class="width-60 bg-opaque upload-banner p-10 mrg-horizon-auto mrg-top-10 ">
+                <p class="white-500-fg font-weight-bold" *ngIf="!uploadService.uploadComplete">{{phrase}}</p>
+                    <div class="m-10 p-10 white-bg">
+                            <h4 class="theme-text"> {{uploadService.uploadComplete ? 'Upload Complete' : 'Uploading '}}</h4>
+                        <p class="font-weight-bold"><am-attachment-name [attachment]="attachment"></am-attachment-name></p>
+                        <am-upload-spinner></am-upload-spinner>
+                        <am-download-link [name]="attachmentService.url | async"></am-download-link>
+                        <label class="pt-16 text-center" fxLayoutAlign="start">Link Options:</label>
+                        <am-settings></am-settings>
+                        <button mat-flat-button color="primary" (click)="cancelOrViewDownload()" class="border-radius-0  white-500-fg mrg-right-10 mrg-top-30"  target="_blank">{{uploadService.uploadComplete? 'View Download': 'Cancel Upload'}}</button>          
+                    </div>
+                    <!-- <p class="text-left white-500-fg  p-10">By starting upload I agree to the <a href="" class="white-500-fg text-underline"> Terms of Services</a></p> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>

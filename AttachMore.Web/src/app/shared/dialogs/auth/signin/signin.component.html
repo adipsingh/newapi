@@ -1,0 +1,32 @@
+<div class="dialog-container">
+  <div fxLayoutAlign="space-between">
+    <h1 mat-dialog-title>Sign in</h1>
+    <button mat-icon-button [mat-dialog-close]="false" class="close-button">
+      <mat-icon>close</mat-icon>
+    </button>
+  </div>
+  <div mat-dialog-content>
+    <form [formGroup]="signinForm" fxLayout="column" fxLayoutAlign="start">
+      <div class="form-group">
+        <input class="form-control" type="text" placeholder="Email" required formControlName="email">
+        <am-bt-input-error-msg [control]="email"></am-bt-input-error-msg>
+      </div>
+      <div class="form-group">
+        <input class="form-control" type="password" placeholder="Password" required formControlName="password">
+        <am-bt-input-error-msg [control]="password"></am-bt-input-error-msg>
+      </div>
+      <div fxLayoutAlign="space-between">
+        <mat-checkbox formControlName="rememberMe">Remember me</mat-checkbox>
+        <button mat-button color="primary" [mat-dialog-close]="false" (click)="openSignupForm()">Register</button>
+      </div>
+      <div fxLayoutAlign="end">
+        <button mat-button color="primary" [mat-dialog-close]="false" (click)="forgetPasswordForm()">Forgot
+          Password?</button>
+      </div>
+    </form>
+  </div>
+  <div mat-dialog-actions fxLayoutAlign="end" fxLayoutGap="10px" class="mt-20">
+    <button class="mat-flat-button border-radius-0" mat-raised-button color="primary" [disabled]="signinForm.invalid"
+      (click)="onSubmit()">Sign In</button>
+  </div>
+</div>

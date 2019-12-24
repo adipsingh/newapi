@@ -1,0 +1,17 @@
+
+<div class="mb-30">
+    <mat-card class="inline-block">
+    <div class="width-100 inline-block border bottom mb-20 pdd-btm-20" *ngFor="let fileHistory of files" (click)="navigateToDetails(fileHistory)"
+      style="cursor: pointer;">
+        <div class="p-0 relative">
+          <span class="attachment_status active">Active</span>
+          <img class="pull-left mrg-right-15 border mrg-top-5" [src]="icons[fileHistory.extension]"  alt="thumbnail" >
+          <h5 class="font-weight-semi-bold font-size-15 ls-0 text-uppercase m-0 pdd-top-20" title="{{fileHistory.attachmentName}}">{{fileHistory.attachmentName}}</h5>
+          <p class="m-0 pdd-top-10 font-size-14">Uploaded {{fileHistory.attachmentCreationDate | prepareDate:
+            '-'}}</p>
+            <p class="m-0 pdd-top-5 font-size-14">{{fileHistory.attachmentSize}}MB</p>
+            <!-- <p class="m-0 pdd-top-5 font-size-13">{{fileHistory.attachmentSize}}MB</p> -->
+          </div>
+    </div>
+  </mat-card>
+  </div>

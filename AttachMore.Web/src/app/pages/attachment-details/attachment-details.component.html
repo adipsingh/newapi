@@ -1,0 +1,103 @@
+<section class="bg-grey mt-120">
+  <div flexLayout>
+    <div class="bg-gray custm_dash">
+      <div class="container">
+        <div class="col-md-3 white-500-bg pr-0">
+          <div class="width-100 inline-block pdd-btm-20 pdd-top-20 border bottom">
+            <img class="pull-left mrg-right-10" [src]="icons[attachment.extension]" alt="thumbnail">
+            <h5 class="font-weight-semi-bold ls-0 mt-30 color-444">{{attachment.name}}</h5>
+            <p class="color-666 ls-0 font-weight-500">Status: <span class="primary-500-fg">{{ fileStatus[attachment.status]}}</span></p>
+          </div>
+          <div class="pdd-btm-20 pdd-top-25 border bottom">
+            <h5 class="font-weight-semi-bold ls-0"><img src="assets/images/main/calender.png" alt="image"> &nbsp;
+              Upload Date Range</h5>
+            <ul class="mrg-left-35">
+              <li class="font-size-14">{{ attachment.createdOn | date : 'MM/dd/yyyy'}}</li>
+              <li class="font-size-14 font-weight-500 mrg-top-10">Expires on</li>
+              <li class="font-size-14 mrg-top-5">{{ attachment.expiredOn | date: 'MM/dd/yyyy'}}</li>
+              <li class="font-size-14 font-weight-500 mrg-top-10">Purges on</li>
+              <li class="font-size-14 mrg-top-5">{{ attachment.purgedOn | date: 'MM/dd/yyyy'}}</li>
+            </ul>
+          </div>
+          <div class="pdd-btm-20 pdd-top-25 border bottom">
+            <h5 class="font-weight-semi-bold ls-0"><img src="assets/images/main/dwnload.png" alt="image"> &nbsp;
+              Downloads</h5>
+            <ul class="mrg-left-35">
+              <li class="font-size-14">{{attachment.totalDownload}} of {{attachment.downloadLimit}}</li>
+            </ul>
+          </div>
+          <div class="pdd-btm-20 pdd-top-25 border bottom">
+            <h5 class="font-weight-semi-bold ls-0"><img src="assets/images/main/pay.png" alt="image"> &nbsp; Payments</h5>
+            <ul class="mrg-left-35">
+              <li class="font-size-14">${{attachment.payments}}</li>
+            </ul>
+          </div>
+          <div class="pdd-btm-20 pdd-top-25">
+            <h5 class="font-weight-semi-bold ls-0"><img src="assets/images/main/upload_by.png" alt="image"> &nbsp;
+              Uploaded by</h5>
+            <ul class="mrg-left-35">
+              <li class="font-size-14">{{attachment.uploadedBy}}</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-9 bg-gray pdd-left-30 min-height-700">
+          <div class="mt-24 mb-24 width-100 inline-block">
+            <h2 class="mt-0 mb-10 font-size-20 font-weight-semi-bold">History - File Details</h2>
+            <!-- <p class="mrg-top-15 font-weight-500 font-size-16 color-444"> {{ attachment.attachmentName}} 
+                <a href="javasrcipt:void()" class="pdd-left-5 pdd-right-10"><img src="assets/images/main/edit_icon.png" alt="icon"></a>  -->
+            <am-attachment-name [attachment]="attachment" class="inline-block"></am-attachment-name>
+            <span class="font-weight-light color-444 font-size-16 pdd-left-15 pdd-right-15">|</span>
+            <span class="font-size-13 font-weight-normal">Size {{ attachment.attachmentSize }} MB | {{
+              attachment.filesDetail?.length }} {{attachment.filesDetail?.length === 1 ? 'File' : 'Files'}}</span>
+          </div>
+
+          <div class="row">
+            <div class="col-md-3 mb-30" *ngFor="let attachmentDetail of attachment.filesDetail">
+              <mat-card>
+                <div class="p-0 text-center">
+                  <!-- <img src="assets/images/main/ppt.png" alt="Excel"> -->
+                  <ng-template [ngIf]="attachmentDetail.isImage" [ngIfElse]="otherfiles">
+                    <img [src]="attachmentDetail.fileURL" alt="thumbnail" class="max-width-100">
+                  </ng-template>
+                  <ng-template #otherfiles>
+                    <img [src]="icons[attachmentDetail.extension]" alt="thumbnail" class="max-width-100">
+                  </ng-template>
+                  <p class="m-0 pdd-top-15 color-666 font-size-13 font-weight-500 lh-1-1 ls-0 ellipsis">{{attachmentDetail.fileName}}</p>
+                </div>
+              </mat-card>
+            </div>
+          </div>
+          <div class="card p-20">
+            <div class="mb-10">
+              <am-download-link [name]="attachment.downloadURL"></am-download-link>
+            </div>
+            <div>
+              <am-settings [expirySettings]="expirySettings" [notificationSettings]="notificationSettings"
+              [securitySettings]="securitySettings"></am-settings>
+            </div>
+            <div class="detail_active_log mt-30">
+                  <h4 class="font-size-16 font-weight-semi-bold color-444">Activity Log</h4>
+                  <ul class="pdd-vertical-10 border mb-30 font-size-15 font-weight-500 color-444">
+                    <li>File Set to Archive on 1/18/18 at 3.30 pm  by Mark Dev.</li>
+                    <li>Download Notification 1/18/18 at 2:35pm sent to sms to 858-837-2491</li>
+                    <li>Downloaded on 1/18/18 at 2:35pm (PT) by IP address 1.12331.2155921 by email address &lt;form data&gt; from 
+                        www.atmo.re/1231234</li>
+                    <li>Download Notification 1/18/18 at 2:35pm sent to sms to 858-837-2491</li>
+                  </ul>
+                  <h4 class="font-size-16 m-0 font-weight-semi-bold color-444">Assigned Download Page</h4>
+                  <mat-form-field>
+                    <mat-select placeholder="Attachmore Default" class="font-size-15">
+                      <mat-option value="5">5</mat-option>
+                      <mat-option value="4">4</mat-option>
+                      <mat-option value="3">3</mat-option>
+                      <mat-option value="2">2</mat-option>
+                      <mat-option value="1">1</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

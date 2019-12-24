@@ -1,0 +1,29 @@
+.heading-1:before {
+    background-color: transparent;
+}
+.font-weight-500{
+    font-weight: 500;
+}
+.min-height-600{
+    min-height: 600px;
+}
+.min-height-700{
+    min-height: 700px;
+}
+.custm_dash{
+    position: relative;
+}
+.custm_dash:before{
+    content: "";
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 45%;
+    height: 100%;
+    background: #fff;
+}
+
+.mat-checkbox-frame{
+    border: 1px solid #ccc !important;
+}
+

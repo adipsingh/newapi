@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AWSSDK.Core" Version="3.3.29.12" />
+    <PackageReference Include="AWSSDK.S3" Version="3.3.29" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\AttachMore.NextGen.Core.DomainModels\AttachMore.NextGen.Core.DomainModels.csproj" />
+    <ProjectReference Include="..\AttachMore.NextGen.Infrastructure.DataAccess\AttachMore.NextGen.Infrastructure.DataAccess.csproj" />
+  </ItemGroup>
+
+</Project>

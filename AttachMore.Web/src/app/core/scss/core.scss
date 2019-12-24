@@ -1,0 +1,19 @@
+@import './theme/am-theme';
+
+// Theming
+@include mat-core();
+
+// Include theme styles for core and each component used in your app.
+@include angular-material-theme($am-theme);
+
+@import './global/am-dialog';
+@import './global/am-layout';
+@import './global/am-progress-spinner';
+@import './global/am-drag-drop';
+@import './global/mat-table';
+@import './global/mat-form-field';
+@import './global/bt-datepicker';
+
+@import './partials/helper';
+@import './partials/typography';
+@import './partials/colors';

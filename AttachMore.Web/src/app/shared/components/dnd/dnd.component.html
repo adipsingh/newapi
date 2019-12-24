@@ -1,0 +1,44 @@
+<div class="width-65 r-upload bg-opaque mrg-horizon-auto clearfix mrg-btm-50 ">
+  <div class="padding-10">
+    <div class="pull-left width-100" >
+    <am-verify-email class="vrfy-mail mrg-btm-10 pull-left width-70"  *ngIf="!authService.isLoggedIn" ></am-verify-email>
+    <div *ngIf="authService.isLoggedIn" class="white-500-fg font-size-16 pdd-top-10 pull-left width-70 ">
+      {{uploadService.uploader.queue.length}} Files totaling {{uploadService.filesSize}} MB selected for upload</div>
+    <div class="pull-right">
+        <input type="file" multiple #fileUpload id="fileElem" ng2FileSelect  [uploader]="uploadService.uploader">
+        <a mat-flat-button class="pull-right border-radius-0 white-500-fg"  [ngClass]="{'grey-100-fg': !uploadService.uploader.getNotUploadedItems().length}" color="accent" [disabled]="!uploadService.uploader.getNotUploadedItems().length" 
+        (click)="redirectToUploadPage()"  matTooltip="{{uploadService.uploader.getNotUploadedItems().length ? 'Upload': 'Please Select Files to Upload'}}">Start Upload</a>    
+    </div>
+  </div>
+    <div class="files-wrapper pull-left width-100 mrg-top-20 mrg-btm-10 padding-20" [ngClass]="{'highlight': uploadService.hasDropZoneOver}" ng2FileDrop *ngIf="authService.isLoggedIn"
+    (fileOver)="uploadService.fileOver($event)"
+    [uploader]="uploadService.uploader">
+      <div class="text-center selected-files-area" *ngIf="!uploadService.uploader.getNotUploadedItems().length">
+        <img src="/assets/images/main/Vector.svg">
+        <p class="text-white sel-text padd-top-10 text-500" *ngIf="!authService.isLoggedIn" >Selected files will appear here</p>
+        <div>
+          <p class="text-white sel-text padd-top-10 text-500" *ngIf="authService.isLoggedIn">Drag and Drop Files Here<br /><span class="font-size-14">OR </span> <br/></p> 
+          <button mat-flat-button color="primary" class="border-radius-0  white-500-fg mrg-right-10" [ngClass]="{'mrg-top-30': !authService.isLoggedIn}" [disabled]="!authService.isLoggedIn" (click)="whenSelectFilesClicked()">Select Files</button>
+        </div>
+      </div>
+      <p class="font-size-14 white-500-fg" *ngIf="uploadService.uploader.getNotUploadedItems().length">{{uploadService.uploader.queue.length}} Files - {{uploadService.filesSize}}MB</p>
+      <div cdkDropList cdkDropListOrientation="horizontal" (cdkDropListDropped)="drop($event)" class="img-gallery text-left" *ngIf="uploadService.uploader.getNotUploadedItems().length">
+          <div class="img-preview text-center white-500-fg font-size-60 cursor-pointer" (click)="whenSelectFilesClicked()">
+            <img src="/assets/images/main/plus.png">
+            <p class="white-500-fg">Add Files</p></div>
+          <am-file @items cdkDrag *ngFor="let file of uploadService.uploader.queue; trackBy: trackByFn" [uploadedFile]="file"></am-file>
+      </div>
+    </div>
+    <div class="files-wrapper mrg-top-10 mrg-btm-10 pull-left width-100 padding-20 pdd-vertical-50" *ngIf="!authService.isLoggedIn">
+      <div class="text-center selected-files-area">
+        <img src="/assets/images/main/Vector.svg">
+        <p class="text-white sel-text padd-top-10 text-500">Selected files will appear here</p>
+        <!-- <div>
+          <button mat-flat-button color="primary" class="border-radius-0  white-500-fg mrg-right-10 " [ngClass]="{'mrg-top-': !authService.isLoggedIn}" [disabled]="!authService.isLoggedIn" (click)="whenSelectFilesClicked()">Select Files</button>      </div> -->
+
+    </div>
+
+  </div>
+  <p class="text-left white-500-fg font-size-13"  *ngIf="authService.isLoggedIn && uploadService.uploader.getNotUploadedItems().length">By starting upload I agree to the <a href="" class="white-500-fg"> Terms of Services</a></p>
+
+</div>

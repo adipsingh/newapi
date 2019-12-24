@@ -1,0 +1,266 @@
+
+$primary-color:#2E71F0;
+
+$secondary-color:#E58E15;
+.features-block-1 
+{.round-images{
+    background: $primary-color;
+    border-radius: 50%;
+    padding: 15px;
+    width: 60px;
+    text-align: center;
+    margin-right: 20px;
+    margin-bottom: 15px;
+}}
+.btn-dark {
+    background-color: $primary-color;
+}
+.pricing-2 .pricing-table.recommended .pricing-footer .btn {
+    background-color: $secondary-color;
+}
+
+.pricing-table
+{
+   h4 {
+        color:$primary-color;
+        font-weight:600;
+    }
+}
+.features-block-5 {
+    padding: 30px 20px;
+    text-align: center;
+    min-height: 233px;
+  }
+
+  .free-trial
+  {  
+    background-repeat: no-repeat;
+    height:345px;
+  }
+
+  .free-trial .mat-form-field-appearance-legacy .mat-form-field-label,
+.free-trial .mat-form-field.mat-focused .mat-form-field-label,
+.free-trial .mat-input-element.mat-form-field-autofill-control
+{
+   color: #fff; 
+}
+.free-trial .mat-form-field-infix {
+  padding: 0.5em 0;
+  border-bottom: 1px solid $primary-color;
+}
+.mat-form-field-appearance-legacy.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label
+{
+    color:#fff
+}
+
+.li-check
+{
+    color:$primary-color;
+}
+.heightMin
+{
+    min-height: 124px;
+}
+// .fs-hero {
+//     height: 90vh;
+// }
+.fs-hero {
+    height: 100%;
+}
+.readmore
+{
+    padding:2px 17px;
+    line-height:35px;
+}
+.swiper-slide {
+    float: left;
+    width: 33.33%;
+}
+@media (max-width: 767px){
+	.r-main.banner-content{
+		margin-top: 100px !important;
+    }
+}
+
+
+
+
+
+
+.swiper-pagination-fraction, .swiper-pagination-custom, .swiper-container-horizontal > .swiper-pagination-bullets {
+    bottom: 10px;
+    left: 0px;
+    width: 100%;
+}
+
+.swiper-pagination, .swiper-pagination-hero, .swiper-pagination-2, .swiper-pagination-3, .swiper-pagination-4, .swiper-pagination-5 {
+    width: 100%;
+    position: relative;
+    text-align: center;
+}
+
+.swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet {
+    margin: 0px 10px;
+}
+
+.swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet {
+    margin: 0px 5px;
+}
+
+.swiper-pagination .swiper-pagination-bullet, .swiper-pagination-hero .swiper-pagination-bullet, .swiper-pagination-2 .swiper-pagination-bullet, .swiper-pagination-3 .swiper-pagination-bullet, .swiper-pagination-4 .swiper-pagination-bullet, .swiper-pagination-5 .swiper-pagination-bullet {
+    transition: all 0.2s ease 0s;
+    margin: 0px 10px;
+}
+
+.swiper-pagination-clickable .swiper-pagination-bullet {
+    cursor: pointer;
+}
+
+.swiper-pagination-bullet {
+    width: 8px;
+    height: 8px;
+    position: relative;
+    margin: 0px 10px;
+}
+.swiper-pagination-bullet {
+    width: 8px;
+    height: 8px;
+    display: inline-block;
+    opacity: 0.2;
+    border-radius: 100%;
+    background: rgb(0, 0, 0);
+}
+
+.swiper-pagination.swiper-bullet-1 .swiper-pagination-bullet::after, .swiper-pagination-hero.swiper-bullet-1 .swiper-pagination-bullet::after, .swiper-pagination-2.swiper-bullet-1 .swiper-pagination-bullet::after, .swiper-pagination-3.swiper-bullet-1 .swiper-pagination-bullet::after, .swiper-pagination-4.swiper-bullet-1 .swiper-pagination-bullet::after, .swiper-pagination-5.swiper-bullet-1 .swiper-pagination-bullet::after {
+    content: "";
+    position: absolute;
+    background-color: transparent;
+    height: 0px;
+    width: 0px;
+    top: 2.5px;
+    left: 2.5px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: rgb(51, 55, 67);
+    border-image: initial;
+    border-radius: 50px;
+    transition: all 0.2s ease 0s;
+}
+
+
+.swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet {
+    margin: 0px 10px;
+}
+
+.swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet {
+    margin: 0px 5px;
+}
+
+.theme-bullet .swiper-pagination-bullet-active {
+    background-color: rgb(46, 113, 240);
+}
+
+.swiper-pagination .swiper-pagination-bullet-active, .swiper-pagination-hero .swiper-pagination-bullet-active, .swiper-pagination-2 .swiper-pagination-bullet-active, .swiper-pagination-3 .swiper-pagination-bullet-active, .swiper-pagination-4 .swiper-pagination-bullet-active, .swiper-pagination-5 .swiper-pagination-bullet-active {
+    background: rgb(51, 55, 67);
+}
+
+.swiper-pagination .swiper-pagination-bullet, .swiper-pagination-hero .swiper-pagination-bullet, .swiper-pagination-2 .swiper-pagination-bullet, .swiper-pagination-3 .swiper-pagination-bullet, .swiper-pagination-4 .swiper-pagination-bullet, .swiper-pagination-5 .swiper-pagination-bullet {
+    transition: all 0.2s ease 0s;
+    margin: 0px 10px;
+}
+
+.swiper-pagination-clickable .swiper-pagination-bullet {
+    cursor: pointer;
+}
+
+.swiper-pagination-bullet {
+    width: 8px;
+    height: 8px;
+    position: relative;
+    margin: 0px 10px;
+}
+
+.swiper-pagination-bullet-active {
+    opacity: 1;
+    background: rgb(0, 122, 255);
+}
+
+.swiper-pagination-bullet {
+    width: 8px;
+    height: 8px;
+    display: inline-block;
+    opacity: 0.2;
+    border-radius: 100%;
+    background: rgb(0, 0, 0);
+}
+
+span {
+    display: inline-block;
+    letter-spacing: 0.5px;
+}
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.swiper-pagination, .swiper-pagination-hero, .swiper-pagination-2, .swiper-pagination-3, .swiper-pagination-4, .swiper-pagination-5 {
+    width: 100%;
+    position: relative;
+    text-align: center;
+}
+
+.swiper-bullet-1.theme-bullet .swiper-pagination-bullet-active::after {
+    border-color: rgb(46, 113, 240);
+}
+
+.swiper-pagination.swiper-bullet-1 .swiper-pagination-bullet-active::after, .swiper-pagination-hero.swiper-bullet-1 .swiper-pagination-bullet-active::after, .swiper-pagination-2.swiper-bullet-1 .swiper-pagination-bullet-active::after, .swiper-pagination-3.swiper-bullet-1 .swiper-pagination-bullet-active::after, .swiper-pagination-4.swiper-bullet-1 .swiper-pagination-bullet-active::after, .swiper-pagination-5.swiper-bullet-1 .swiper-pagination-bullet-active::after {
+    height: 16px;
+    width: 16px;
+    top: -4px;
+    left: -4px;
+}
+
+.swiper-pagination.swiper-bullet-1 .swiper-pagination-bullet::after, .swiper-pagination-hero.swiper-bullet-1 .swiper-pagination-bullet::after, .swiper-pagination-2.swiper-bullet-1 .swiper-pagination-bullet::after, .swiper-pagination-3.swiper-bullet-1 .swiper-pagination-bullet::after, .swiper-pagination-4.swiper-bullet-1 .swiper-pagination-bullet::after, .swiper-pagination-5.swiper-bullet-1 .swiper-pagination-bullet::after {
+    content: "";
+    position: absolute;
+    background-color: transparent;
+    height: 0px;
+    width: 0px;
+    top: 2.5px;
+    left: 2.5px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: rgb(51, 55, 67);
+    border-image: initial;
+    border-radius: 50px;
+    transition: all 0.2s ease 0s;
+}
+
+
+.swiper-bullet-1.theme-bullet .swiper-pagination-bullet-active::after {
+    border-color: rgb(46, 113, 240);
+}
+
+.swiper-pagination.swiper-bullet-1 .swiper-pagination-bullet-active::after, .swiper-pagination-hero.swiper-bullet-1 .swiper-pagination-bullet-active::after, .swiper-pagination-2.swiper-bullet-1 .swiper-pagination-bullet-active::after, .swiper-pagination-3.swiper-bullet-1 .swiper-pagination-bullet-active::after, .swiper-pagination-4.swiper-bullet-1 .swiper-pagination-bullet-active::after, .swiper-pagination-5.swiper-bullet-1 .swiper-pagination-bullet-active::after {
+    height: 16px;
+    width: 16px;
+    top: -4px;
+    left: -4px;
+}
+
+.swiper-pagination.swiper-bullet-1 .swiper-pagination-bullet::after, .swiper-pagination-hero.swiper-bullet-1 .swiper-pagination-bullet::after, .swiper-pagination-2.swiper-bullet-1 .swiper-pagination-bullet::after, .swiper-pagination-3.swiper-bullet-1 .swiper-pagination-bullet::after, .swiper-pagination-4.swiper-bullet-1 .swiper-pagination-bullet::after, .swiper-pagination-5.swiper-bullet-1 .swiper-pagination-bullet::after {
+    content: "";
+    position: absolute;
+    background-color: transparent;
+    height: 0px;
+    width: 0px;
+    top: 2.5px;
+    left: 2.5px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: rgb(51, 55, 67);
+    border-image: initial;
+    border-radius: 50px;
+    transition: all 0.2s ease 0s;
+}

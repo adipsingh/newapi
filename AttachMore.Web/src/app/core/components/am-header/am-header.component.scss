@@ -1,0 +1,53 @@
+$primary-color:#2E71F0;
+
+$secondary-color:#E58E15;
+.header .dropdown-menu {
+    background: #fff;
+    border: 1px solid #eee;
+}
+
+.header .dropdown-menu li:hover>a,
+.header .dropdown-menu li:focus>a {
+    background-color: #2E71F0;
+}
+
+.user-img {
+    border-radius: 50%;
+    width: 28px;
+    height: 28px;
+}
+li.nav-item.nav-loggedin {
+    margin-top: 15px;
+    color:#fff;
+}
+.sticky li.nav-item.nav-loggedin {
+    color:#333;
+}
+.header .navbar-collapse ul.navbar-nav > li > a.signupbtn{
+    padding:26px 15px 10px;
+}
+.mat-stroked-button {
+    border: 1px solid #fff;
+    padding: 0 23px;
+    line-height: 34px;
+}
+.main-font-family{
+    font-family: Montserrat, sans-serif;}
+
+    .cust-pad
+    {
+        padding: 2px 25px;
+    }
+    .sticky  .mat-stroked-button {
+        border: 1px solid $primary-color;
+        padding: 2px 25px;
+    }
+    .mat-form-field-appearance-legacy .mat-form-field-infix
+    {
+        border-bottom: 1px solid $primary-color;
+    }
+    button.mat-menu-item {
+        line-height: 22px;
+    height: 30px;
+    font-size: 12px;
+    }

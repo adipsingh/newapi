@@ -1,0 +1,29 @@
+.optionsItems
+{
+    max-width: 320px;
+    text-align: center;
+}
+.notify_mail{
+    position: absolute;
+    top: 0;
+    left: 100%;
+    margin-left: 10px;
+    font-weight: 500;
+
+}
+select.form-control,input.form-control
+{
+    min-height: 36px;
+    color:#222;
+}
+.mat-slide-toggle-content {
+    width: 145px;
+    text-align: right;
+}
+.width95{width:92px;}
+.to {padding:5px;}
+input.form-control
+{
+    width:220px;
+    margin-top:10px;
+}

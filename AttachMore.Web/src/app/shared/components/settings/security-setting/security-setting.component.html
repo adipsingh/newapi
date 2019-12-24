@@ -1,0 +1,35 @@
+<form class="mt-16" #securitySettingForm="ngForm" (ngSubmit)="onSubmit()">
+  <div class="mrg-horizon-auto optionsItems">
+    <div>
+      <mat-checkbox (change)="showEmailDetails = !showEmailDetails">Require an email address to download</mat-checkbox>
+    </div>
+    <div *ngIf="showEmailDetails" class="pdd-left-20">
+      <mat-radio-group name="emailType" [(ngModel)]="emailType" (change)="showEmail = !showEmail">
+        <mat-radio-button value="ANY"><span class="font-weight-normal font-size-14">any email</span> </mat-radio-button><br />
+        <mat-radio-button value="SPECIFIC" class="font-weight-normal"><span class="font-weight-normal font-size-14">only
+            specific email address(es)</span>
+        </mat-radio-button>
+      </mat-radio-group>
+    </div>
+    <div class="pdd-left-20 mrg-top-5 mrg-btm-10" *ngIf="emailType === 'SPECIFIC' && showEmailDetails">
+      <!-- <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>Fill form field</mat-label>
+        <input matInput placeholder="Email" name="accessEmail" #accessEmail="ngModel" [(ngModel)]="settings.accessEmail" email>
+      </mat-form-field> -->
+      <input type="text" class="form-control" placeholder="Email" name="accessEmail" #accessEmail="ngModel" [(ngModel)]="settings.accessEmail" email>
+      <p class="hint">Separate each email address with ';'</p>
+    </div>
+    <div>
+      <mat-checkbox (change)="showPasswordDetails = !showPasswordDetails">Required password to download</mat-checkbox>
+    </div>
+    <div class="pdd-left-20 mrg-top-5 mrg-btm-10" *ngIf="showPasswordDetails">
+      <!-- <mat-form-field class="example-full-width">
+        <input type="password" matInput placeholder="Password" #accessPassword="ngModel" name="accessPassword" [(ngModel)]="settings.accessPassword">
+      </mat-form-field> -->
+      <input type="password" class="form-control" placeholder="Password" #accessPassword="ngModel" name="accessPassword" [(ngModel)]="settings.accessPassword">
+    </div>
+  </div>
+  <div fxLayoutAlign="center">
+    <button mat-flat-button color="accent" class="white-500-fg border-radius-0 mrg-top-10">Save</button>
+  </div>
+</form>

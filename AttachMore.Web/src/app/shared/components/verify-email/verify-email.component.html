@@ -1,0 +1,16 @@
+<ng-template [ngIf]="!authService.isLoggedIn">
+    <input placeholder="&#xf003; Email" class="form-control width-80 pull-left" 
+    [formControl]="userEmail">
+    <button mat-flat-button color="primary" class="border-radius-0 line-height-40 nxt-btn" (click)="verifyEmail()">Next</button>
+ 
+  <div *ngIf="showError"
+    class="alert alert-danger r-error">
+      Format incorrect. Emails must contact @ and .
+  </div>
+  <!-- <mat-form-field class="width-80">
+    <input placeholder="Email" [formControl]="userEmail" class="example-full-width">
+    <mat-error>
+      <am-input-error-msg [control]="userEmail"></am-input-error-msg>
+    </mat-error>
+  </mat-form-field> -->
+</ng-template>

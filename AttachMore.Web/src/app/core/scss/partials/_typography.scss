@@ -1,0 +1,89 @@
+
+
+// Text format helpers
+.text-italic {
+    font-style: italic;
+}
+
+.text-semibold {
+    font-weight: 600;
+}
+
+.text-bold,
+strong {
+    font-weight: 700;
+}
+
+.text-strike {
+    text-decoration: line-through;
+}
+
+.text-super {
+    vertical-align: super;
+}
+
+.text-sub{
+    vertical-align: sub;
+}
+
+.text-capitalize {
+    text-transform: capitalize;
+}
+
+.text-lowercase {
+    text-transform: lowercase;
+}
+
+.text-uppercase {
+    text-transform: uppercase;
+}
+
+// Text align helpers
+.text-center {
+    text-align: center;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.text-left {
+    text-align: left;
+}
+
+// Font size helpers
+@for $size from 1 to 20 {
+    $f-size: $size * 2;
+    .f-size-#{$f-size} {
+        font-size: #{$f-size}px !important;
+    }
+}
+
+// Font weight helpers
+@for $weight from 1 to 9 {
+    $f-weight: $weight * 100;
+    .f-weight-#{$f-weight} {
+        font-weight: $f-weight !important;
+    }
+}
+
+// Line height helpers
+@for $line from 1 to 9 {
+    $l-height: $line * 100;
+    .l-height-#{$l-height} {
+        line-height: #{$l-height}px !important;
+    }
+}
+
+// Truncate
+.text-truncate {
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+// Nowrap
+.text-nowrap {
+    white-space: nowrap;
+}

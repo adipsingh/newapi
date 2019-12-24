@@ -1,0 +1,134 @@
+.heading-1:before {
+    background-color: transparent;
+}
+.dash_img {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+}
+
+.font-weight-500{
+    font-weight: 500 !important;
+}
+.user_img{
+    float: left;
+    width: 30%;
+
+    img{
+        max-width: 100%;
+    }
+}
+.user_detail{
+    float: left;
+    width: 70%;
+}
+.color-444{
+    color: #444;
+}
+.color-666{
+    color: #666;
+}
+.custm_dash{
+    position: relative;
+}
+.custm_dash:before{
+    content: "";
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 45%;
+    height: 100%;
+    background: #fff;
+}
+.border-radius-0{
+    border-radius: 0 !important;
+}
+.custom_accordion .mat-accordion .mat-expansion-panel{
+    box-shadow: 0px 2px 4px -1px #ddd;
+}
+/* input type styles */
+input.form-control {
+    border-color: #dfdfdf;
+}
+input.form-control:focus{
+    outline: none;
+    box-shadow: none;
+}
+input.form-control::placeholder {
+    color: #999;
+}
+.radio input[type="radio"] + label:before{
+    border: 1px solid #ccc;
+}
+.radio input[type="radio"]:checked + label:before{
+    border-color:#333743;
+}
+
+.share_link_devider{
+    position: relative;
+    width: 2px;
+    height: 265px;
+    margin: 40px auto 0;
+    background: #ccc;
+}
+
+.share_link_devider::before{
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -30px;
+    width: 30px;
+    height: 30px;
+    margin-top: -15px;
+    transform: rotate(-45deg);
+    box-sizing: border-box;
+    border-left: 3px solid #2e72f1;
+    border-top: 3px solid #2e72f1;
+}
+.share_link_devider::after{
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: -30px;
+    width: 30px;
+    height: 30px;
+    margin-top: -15px;
+    transform: rotate(-45deg);
+    box-sizing: border-box;
+    border-right: 3px solid #2e72f1;
+    border-bottom: 3px solid #2e72f1;
+}
+.lh-44{
+    line-height: 44px !important;
+}
+ul.cstm_design li {
+    position: relative;
+    margin-bottom: 9px;
+}
+ul.cstm_design li a{
+    padding-left: 50px;
+    font-size: 16px;
+}
+ul.cstm_design li img{
+    position: absolute;
+    left: 0;
+    max-width: 36px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/**my profile image**/
+img.profile_edit_img {
+    float: right;
+    width: 60px;
+    margin-right: 0px;
+    border-radius: 45px;
+}
+a.profile_edit_btn {
+    float: right;
+    margin-right: 20px;
+    margin-top: 20px;
+    text-decoration: underline;
+    font-weight: 500;
+    color: #3f51b5;
+}

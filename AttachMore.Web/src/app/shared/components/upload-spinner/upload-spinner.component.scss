@@ -1,0 +1,35 @@
+.spinner-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    line-height: 22px;
+    font-size: 14px;
+    font-family: Montserrat;
+    width: 100px;
+    text-align: center;
+    font-weight: 600;
+    color: #666;
+    letter-spacing: 0.2px;
+}
+
+.position-relative {
+    position: relative;
+}
+
+.social-icons {
+    background: #ddd;
+    padding: 7px;
+}
+
+.mat-tab-label {
+    background: #e5e5e5;
+}
+
+.mat-form-field {
+    width: 28%
+}
+
+.fs-hero {
+    height: 130vh;
+}

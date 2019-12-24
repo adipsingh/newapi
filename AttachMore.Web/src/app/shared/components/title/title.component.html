@@ -1,0 +1,13 @@
+<div  class="text-center mrg-btm-20">
+  <ng-template [ngIf]="!editMode" [ngIfElse]="editTemplate">
+      <h1 class="color-444 font-size-18 font-weight-semi-bold">{{name}}
+      <mat-icon (click)="editMode = true" class=" font-size-18 color-444 pdd-left-10" matTooltip="edit">edit</mat-icon>
+      </h1>    
+  </ng-template>
+  <ng-template #editTemplate>
+    <input type="text" autofocus class="form-control width-50 display-inline text-center font-weight-light  " [(ngModel)]="name" />
+    <button type="button" mat-flat-button color="primary" (click)="saveClick()" class="border-radius-0 line-height-40 ver_align_top  mrg-right-10" >Save</button>  
+
+    <!-- <mat-icon (click)="saveAttachmentName()" title="Save" class="mt-2 pdd-top-5 font-size-27 pdd-left-10">save</mat-icon> -->
+  </ng-template>
+</div>

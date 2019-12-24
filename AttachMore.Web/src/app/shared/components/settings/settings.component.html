@@ -1,0 +1,26 @@
+<mat-accordion>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title class="font-weight-600">
+                    Expire
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <am-expiry-setting [settings]="expirySettings"></am-expiry-setting>
+        </mat-expansion-panel>
+        <mat-expansion-panel>
+                <mat-expansion-panel-header>
+                  <mat-panel-title>
+                        Notify
+                  </mat-panel-title>
+                </mat-expansion-panel-header>
+                <am-notification-setting [settings]="notificationSettings"></am-notification-setting>
+            </mat-expansion-panel>
+              <mat-expansion-panel>
+                    <mat-expansion-panel-header>
+                      <mat-panel-title>
+                            Secure
+                      </mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <am-security-setting [settings]="securitySettings"></am-security-setting>
+                  </mat-expansion-panel>
+</mat-accordion>

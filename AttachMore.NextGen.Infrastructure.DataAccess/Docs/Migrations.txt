@@ -1,0 +1,3 @@
+﻿Enable-Migrations -ContextTypeName NextGenContext -MigrationDirectory Migrations\NextGen
+
+add-migration -ConfigurationTypeName

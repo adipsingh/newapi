@@ -1,0 +1,148 @@
+<header id="menu" class="header header-transparent header-sticky" amStickyHeader amHeaderColor>
+  <nav class="navbar">
+    <div class="container">
+      <div class="menu-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="top-bar"></span>
+          <span class="middle-bar"></span>
+          <span class="bottom-bar"></span>
+          <span class="sr-only">Toggle Dropdown</span>
+        </button>
+        <div class="nav-logo">
+          <a class="logo" routerLink="/"><img class="logo-light" src="assets/images/logo/logo-11.svg"
+              alt="AttachMore"></a>
+          <a class="logo" routerLink="/"><img class="logo-dark" src="assets/images/logo/logo.svg" alt="AttachMore"></a>
+        </div>
+      </div>
+
+      <div class="collapse navbar-collapse nav-collapse">
+        <ul class="nav navbar-nav" [ngClass]="{'mrg-cust': authService.isLoggedIn}"
+          *ngIf="headerType !== pageType.Download else donwloadTemplate">
+          <li class="nav-item dropdown" *ngIf="!authService.isLoggedIn || headerType === pageType.PreLogin">
+            <a class="dropdown-toggle" href="javascript:void(0);">Learn More <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="javascript:void(0);" routerLink="howItWorks">How it Works</a></li>
+              <li><a href="javascript:void(0);" routerLink="features">Features</a></li>
+              <li><a href="javascript:void(0);" routerLink="benefits">Benefits</a></li>
+              <li><a href="javascript:void(0);" routerLink="security">Security</a></li>
+              <li><a href="thedifference.html">The Difference</a></li>
+              <li><a href="reviews.html">Customer Reviews</a></li>
+              <li><a href="/about">About Attachmore</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown" *ngIf="!authService.isLoggedIn || headerType === pageType.PreLogin">
+            <a class="dropdown-toggle" href="javascript:void(0);">Pricing<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="javascript:void(0);" routerLink="plan&pricing">Pricing</a></li>
+              <li><a href="faqs.html">FAQs</a></li>
+              <li><a href="/addFree">Ad Free Pledge</a></li>
+
+            </ul>
+          </li>
+          <li class="nav-item dropdown" *ngIf="!authService.isLoggedIn || headerType === pageType.PreLogin">
+            <a class="dropdown-toggle" href="javascript:void(0);">Support<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="support.html">Support Home</a></li>
+              <li><a href="howtodownloadfiles.html">How to Download Files</a></li>
+              <li><a href="https://atmo.re/Customers/EditAccountBillingInformation.aspx">Update Billing Info</a></li>
+              <li><a href="speedtest.html">Speed Test</a></li>
+            </ul>
+          </li>
+      
+          <li class="nav-item dropdown" *ngIf="!authService.isLoggedIn">
+            <a class="dropdown-toggle" href="javascript:void(0);">
+              Sign In | Sign Up<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-toggle" href="javascript:void(0);"
+                  (click)="authDialogService.openSigninForm()">Sign In</a> </li>
+              <li><a href="javascript:void(0);" (click)="authDialogService.openRegisterForm()">Create a New Account</a></li>
+              <li><a href="javascript:void(0);" (click)="authDialogService.openSigninForm()">Contact Sales</a></li>
+              <li><a href="javascript:void(0);" (click)="authDialogService.openSigninForm()">My Account </a></li>
+              <li><a href="javascript:void(0);" (click)="authDialogService.openSigninForm()">History</a></li>
+              <li><a href="javascript:void(0);" (click)="authDialogService.openSigninForm()">Upload</a></li>
+              <li><a href="javascript:void(0);" (click)="authDialogService.openSigninForm()">Guest Links</a></li>
+              <li><a href="javascript:void(0);" (click)="authDialogService.openSigninForm()">Settings</a></li>
+              <li><a href="javascript:void(0);" (click)="authDialogService.openSigninForm()" routerLink="subUsers">Sub
+                  Users</a></li>
+              <li><a href="javascript:void(0);" (click)="authDialogService.openSigninForm()">Pages and Widgets</a></li>
+              <li><a href="javascript:void(0);" (click)="authDialogService.openSigninForm()">Apps</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item dropdown" *ngIf="authService.isLoggedIn && headerType === pageType.PostLogin">
+            <a href="javascript:void(0);" routerLink="dashboard">DashBoard</a>
+          </li>
+          <li class="nav-item dropdown" *ngIf="authService.isLoggedIn && headerType === pageType.PostLogin">
+            <a href="javascript:void(0);" routerLink="filesHistory">History</a>
+          </li>
+          <li class="nav-item dropdown" *ngIf="authService.isLoggedIn && headerType === pageType.PostLogin">
+            <a href="javascript:void(0);" routerLink="guestLinks">Guest Links</a>
+          </li>
+          <li class="nav-item dropdown" *ngIf="authService.isLoggedIn && headerType === pageType.PostLogin">
+            <a href="javascript:void(0);" routerLink="settings">Settings</a>
+          </li>
+          <li class="nav-item dropdown" *ngIf="authService.isLoggedIn && headerType === pageType.PostLogin">
+            <a href="javascript:void(0);" routerLink="subUsers">Sub Users</a>
+          </li>
+   
+          <li class="nav-item nav-loggedin" *ngIf="authService.isLoggedIn">
+           <!-- [matMenuTriggerFor]="userInfo" -->
+            <button mat-button >
+              <span
+                class="main-font-family pdd-right-10 text-capitalize">{{authService.userInfo?.user.firstName}}</span>
+              <img class="user-img" src="assets/images/thumb/aadler.jpg" />
+              <mat-icon>expand_more</mat-icon>
+            </button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-toggle" href="javascript:void(0);" routerLink="/account/changePassword"><i
+                    class="ei ei-key mr-10"></i>Change Password</a> </li>
+              <li><a href="javascript:void(0);" (click)="authService.signOut()"><i class="ei ei-power-button mr-10"></i>
+                  Logout</a></li>
+              <li><a href="javascript:void(0);">Contact Sales</a></li>
+              <li><a href="javascript:void(0);">Upgrade Account</a></li>
+              <li><a href="javascript:void(0);">Review AttachMore</a></li>
+              <li class="nav-item " *ngIf="authService.isLoggedIn">
+                <a href="javascript:void(0);" routerLink="dashboard">DashBoard</a>
+              </li>
+              <li class="nav-item " *ngIf="authService.isLoggedIn">
+                <a href="javascript:void(0);" routerLink="filesHistory">History</a>
+              </li>
+              <li class="nav-item guestLinks" *ngIf="authService.isLoggedIn">
+                <a href="javascript:void(0);"  routerLink="guestLinks">Guest Links</a>
+              </li>
+              <li class="nav-item " *ngIf="authService.isLoggedIn">
+                <a href="javascript:void(0);" routerLink="settings">Settings</a>
+              </li>
+              <li class="nav-item " *ngIf="authService.isLoggedIn">
+                <a href="javascript:void(0);" routerLink="subUsers">Sub Users</a>
+              </li>
+              <li class="nav-item " *ngIf="authService.isLoggedIn">
+                <a href="javascript:void(0);">Pages and Widgets</a>
+              </li>
+              <li class="nav-item " *ngIf="authService.isLoggedIn">
+                <a href="javascript:void(0);">Apps</a>
+              </li>
+            </ul>
+          
+          </li>
+          <li class="nav-item nav-loggedin pdd-right-15 font-size-25" *ngIf="authService.isLoggedIn  && headerType === pageType.PostLogin">|</li>
+          <li class="nav-item nav-loggedin" *ngIf="authService.isLoggedIn  && headerType === pageType.PostLogin">
+            <button mat-flat-button color="primary" class="border-radius-0 main-font-family font-weight-normal cust-pad"
+              (click)="navigateToUpload()">Upload</button>
+          </li>
+        </ul>
+        <ng-template #donwloadTemplate>
+          <ul class="nav navbar-nav mt-30">
+            <li class="font-size-16 white-500-fg">
+             <a href="" class="p-0">Need to send large files?</a> 
+            </li>
+            <li>
+              <a routerLink="home" class="p-0 mrg-left-10"><u>Try Attachmore</u></a>
+            </li>
+          </ul>
+        </ng-template>
+      </div>
+    </div>
+  </nav>
+</header>
+<am-progress-bar></am-progress-bar>

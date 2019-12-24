@@ -1,0 +1,113 @@
+<section class="bg-grey mt-120">
+  <div flexLayout>
+    <div class="bg-gray custm_dash">
+      <div class="container">
+        <div class="col-md-3 white-500-bg pr-0">
+          <div class="pdd-btm-20 pdd-top-25 border bottom">
+            <h5 class="font-weight-semi-bold ls-0 font-size-15 "><img src="assets/images/main/billing.png" alt="image">
+              &nbsp; All Files</h5>
+            <ul class="mrg-left-35">
+              <li>
+                <mat-checkbox class="custm_font_size" (change)="filterByFileStatus(active.checked, fileStatus.Active)"
+                  #active>Active Files</mat-checkbox>
+              </li>
+              <li>
+                <mat-checkbox class="custm_font_size" (change)="filterByFileStatus(expired.checked, fileStatus.Expired)"
+                  #expired>Expired Files</mat-checkbox>
+              </li>
+              <li>
+                <mat-checkbox class="custm_font_size" (change)="filterByFileStatus(purged.checked, fileStatus.Purged)"
+                  #purged>Purged Files</mat-checkbox>
+              </li>
+              <li>
+                <mat-checkbox class="custm_font_size" (change)="filterByFileStatus(archived.checked, fileStatus.Archived)"
+                  #archived>Archived Files</mat-checkbox>
+              </li>
+              <li>
+                <mat-checkbox class="custm_font_size" (change)="filterByFileStatus(purchased.checked, fileStatus.Purchased)"
+                  #purchased>Purchased Files</mat-checkbox>
+              </li>
+            </ul>
+          </div>
+          <div class="pdd-btm-20 pdd-top-20 border bottom">
+            <h5 class="font-weight-semi-bold ls-0 font-size-15"><img src="assets/images/main/calender.png" alt="image">
+              &nbsp; Upload Date Range</h5>
+            <ul class="mrg-left-35">
+              <li>
+                <!-- <mat-checkbox class="custm_font_size">8/17/18</mat-checkbox> -->
+                <mat-form-field>
+                  <input matInput [matDatepicker]="startDatePicker" [max]="maxDate" placeholder="Start date" [formControl]="filesFilterModel.fileType.startDate">
+                  <mat-datepicker-toggle matSuffix [for]="startDatePicker"></mat-datepicker-toggle>
+                  <mat-datepicker #startDatePicker></mat-datepicker>
+                </mat-form-field>
+              </li>
+              <li>
+                <!-- <mat-checkbox class="custm_font_size">8/17/17</mat-checkbox> -->
+                <mat-form-field>
+                  <input matInput [matDatepicker]="endDatePicker" [max]="maxDate" placeholder="End date" [formControl]="filesFilterModel.fileType.endDate">
+                  <mat-datepicker-toggle matSuffix [for]="endDatePicker"></mat-datepicker-toggle>
+                  <mat-datepicker #endDatePicker></mat-datepicker>
+                </mat-form-field>
+              </li>
+            </ul>
+          </div>
+          <div class="pdd-btm-20 pdd-top-20 border bottom">
+            <h5 class="font-weight-semi-bold ls-0 font-size-15"><img src="assets/images/main/file_type.png" alt="image">
+              &nbsp; File Type</h5>
+            <ul class="mrg-left-35">
+              <li>
+                <mat-checkbox class="custm_font_size">All Users</mat-checkbox>
+              </li>
+              <li>
+                <mat-checkbox class="custm_font_size">Method</mat-checkbox>
+              </li>
+            </ul>
+          </div>
+          <div class="">
+            <p class="pdd-top-20 pdd-botttom-20">
+              <button class="border-radius-0 main-font-family font-weight-normal mat-flat-button mat-primary" color="primary" mat-flat-button="" ng-reflect-color="primary">
+                <span class="mat-button-wrapper" (click)="applyFilter()">Apply</span>
+                <div class="mat-button-ripple mat-ripple" matripple="" ng-reflect-centered="false"></div>
+                <div class="mat-button-focus-overlay"></div>
+              </button>
+              <button class="border-radius-0 mrg-left-15 main-font-family font-weight-normal mat-flat-button mat-accent white-500-fg" color="accent" mat-flat-button="" ng-reflect-color="accent" (click)="clearFilter()">
+                <span class="mat-button-wrapper">Clear</span>
+                <div class="mat-button-ripple mat-ripple" matripple="" ng-reflect-centered="false"></div>
+                <div class="mat-button-focus-overlay"></div>
+              </button>
+            </p>
+          </div>
+        </div>
+        <div class="col-md-9 bg-gray pdd-left-30 min-height-700">
+          <div class="mt-24 mb-24 width-100 inline-block">
+            <h2 class="m-0 mrg-top-15 font-size-20 pull-left font-weight-semi-bold">History</h2>
+            <div class="pull-right" style="margin-top:-5px;">
+              <a href="javascript:void(0)" (click)="viewFileHistory('THUMBNAIL')" class="custm_thumb_view"
+                [class.active]="isThumbnailView">fdjkg</a>
+              <a href="javascript:void(0)" (click)="viewFileHistory('LIST')" class="custm_detail_view" [class.active]="!isThumbnailView">fdgs</a>
+            </div>
+            <div class="pull-right">
+              <div>
+                <span class="sort_by font-size-15 mrg-right-15 font-weight-500">Sort by:</span>
+                <mat-form-field class="custm">
+                  <mat-select placeholder="Upload Date (Newest)" #fileStages (selectionChange)="whenSortByFileStagesChanges(fileStages.value)">
+                    <mat-option [value]="fileStage.NewestUpload">Upload Date (Newest)</mat-option>
+                    <mat-option [value]="fileStage.OldestUpload">Upload Date (Oldest)</mat-option>
+                    <mat-option [value]="fileStage.NewestExpired">Expire Date (Newest)</mat-option>
+                    <mat-option [value]="fileStage.OldestExpired">Expire Date (Oldest)</mat-option>
+                    <mat-option [value]="fileStage.NewestPurged">Purge Date (Newest)</mat-option>
+                    <mat-option [value]="fileStage.OldestPurged">Purge Date (Oldest)</mat-option>
+                    <mat-option [value]="fileStage.MostDownload">Downloads (Most)</mat-option>
+                    <mat-option [value]="fileStage.LeastDownlaod">Download (Least)</mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+            </div>
+          </div>
+          <am-thumbnail-view *ngIf="isThumbnailView" [files]="filteredFilesHistory"></am-thumbnail-view>
+          <am-list-view *ngIf="!isThumbnailView" [files]="filteredFilesHistory"></am-list-view>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,17 @@
+<div class="img-preview text-center">
+  <div>
+      <p class="font-size-10 font-weight-bold left pull-left width-80 m-0 file-name">{{name}} </p>
+      <p class="delete-img right pull-right width-20 m-0">
+        <button mat-icon-button (click)="whenDeletedClicked()">
+          <mat-icon>close</mat-icon>
+        </button>
+      </p>
+  </div>
+  <img *ngIf="filetype === amfileType.image" [src]="url" width="100" height="100" />
+  <video *ngIf="filetype === amfileType.video" [src]="url" width="100" height="100"></video>
+  <ng-template [ngIf]="filetype === amfileType.normal" class="text-center">
+   <img [src]="icons[extension.toLowerCase()]" width="100" height="100" alt="no preview">
+  </ng-template>
+  <!-- <p>{{name}}</p> -->
+  <!-- <p>{{sizeInKb}} Kb</p> -->
+</div>

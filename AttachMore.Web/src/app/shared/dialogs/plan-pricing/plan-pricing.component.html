@@ -1,0 +1,29 @@
+<div class="dialog-container">
+  <h1 mat-dialog-title class="text-semibold">Select a Plan</h1>
+</div>
+<div mat-dialog-content>
+  <mat-radio-group [(ngModel)]="selectedPackage">
+    <div class="plan-bg" *ngFor="let package of packages">
+      <mat-radio-button [value]="package.id">
+        <div class="width-70 pull-left plan-desc">
+          <p class="text-dark text-semibold text-uppercase">{{ package.name }}</p>
+          <ul class="text-500">
+            <li><i class="ei ei-checked li-check mrg-right-10  accent-500-fg"></i>{{package.storageLimit}} GB of Upload
+            </li>
+            <li><i class="ei ei-checked li-check mrg-right-10  accent-500-fg"></i>{{package.linkLife}} Downloads per
+              file </li>
+            <li><i class="ei ei-checked li-check mrg-right-10  accent-500-fg"></i>{{package.linkLife}} Days Hosting</li>
+            <li><i class="ei ei-checked li-check mrg-right-10  accent-500-fg"></i>Full Feature Access</li>
+          </ul>
+        </div>
+        <div class="width-30 text-center pull-left plan-price text-semibold">
+          ${{package.monthlyPlan}} a month
+        </div>
+      </mat-radio-button>
+    </div>
+  </mat-radio-group>
+</div>
+<div mat-dialog-actions fxLayoutAlign="space-between" fxLayoutGap="10px" class="mt-20">
+  <button mat-raised-button color="primary" class="border-radius-0" (click)="onBuyPlan()">Buy Selected</button>
+  <button mat-raised-button color="primary" [mat-dialog-close]="true" class="border-radius-0">Next</button>
+</div>

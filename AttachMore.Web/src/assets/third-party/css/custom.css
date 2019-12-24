@@ -1,0 +1,70 @@
+/*---------------------------------------------------------------------------
+  Theme: Eastern
+  
+  Your CSS goes here
+----------------------------------------------------------------------------*/
+
+
+.orange-text
+{
+  color: #e58e15
+}
+
+
+
+  .features-block-5 .features-info .features-tittle {
+    font-size:18px;
+    font-weight: 600;
+  }
+
+.header ul.navbar-nav > li > a
+{
+  color: #fff;
+  font-family: Montserrat;
+  text-transform: initial;
+  font-size: 14px;
+  font-weight:normal;
+  padding: 35px 15px 10px;
+}
+.signin
+{
+  padding: 10px 30px 11px !important;
+  border: 1px solid #53B7E4;
+  border-radius: 7px;
+}
+.signup
+{
+  padding: 10px 30px 11px !important;
+  background: #53B7E4;
+  border-radius: 7px;
+  color: #fff;
+}
+.header.header-transparent .nav-logo img.logo-light {
+  width: 100%;
+}
+
+.mat-form-field-appearance-legacy .mat-form-field-label
+{
+  font-size: 14px;
+  font-weight: 500;
+}
+ .bg-opaque
+ {
+   background: rgba(0,0,0,0.3);
+ }
+ .files-wrapper
+ {
+   border:1px dashed rgba(255,255,255,0.6);
+ }
+.sel-text{
+  font-family: Montserrat;
+  font-size: 18px;
+  font-weight: 600;
+  color:#e8e8e8;
+  padding: 10px 0 0 0;
+}
+.free-trial .mat-form-field-appearance-legacy .mat-form-field-label {
+  color: #fff;
+}
+
+/*# sourceMappingURL=custom.css.map */

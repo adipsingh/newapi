@@ -1,0 +1,41 @@
+<div fxLayoutAlign="space-around center">
+    <!-- *ngIf="!uploadService.uploadComplete; else uploadCompleted" -->
+    <div class="position-relative">
+        <mat-progress-spinner color="primary" mode="determinate" [value]="uploadService.networkSpeedProgress">
+        </mat-progress-spinner>
+        <span class="spinner-text">{{uploadService.uploadComplete ? 'Uploaded' : 'Uploading'}} at <br />
+            <b class="f-size-28">{{uploadService.networkSpeed()}}</b><br />KPBs
+        </span>
+    </div>
+    <div class="position-relative">
+        <mat-progress-spinner color="primary" mode="determinate" [value]="uploadService.uploader.progress">
+        </mat-progress-spinner>
+        <span class="spinner-text">
+            <b class="f-size-28">{{uploadService.uploader.progress}}%</b>
+            <br /> {{uploadService.uploadedSize}} of <br />
+            {{uploadService.filesSize}} MB
+        </span>
+    </div>
+    <div class="position-relative">
+        <mat-progress-spinner color="primary" mode="determinate" [value]="uploadService.uploadedFilesPercentage">
+        </mat-progress-spinner>
+        <span class="spinner-text">
+            {{uploadService.uploadComplete ? 'Uploaded' : 'Uploading'}} <br />
+            <b class="orange-600-fg f-size-28">
+                {{uploadService.uploadFilesCount}}</b>
+            <br />of {{uploadService.uploader.queue.length}} files
+        </span>
+    </div>
+
+</div>
+<!-- <ng-template #uploadCompleted>
+    <div fxLayoutAlign="space-around center">
+        <div class="position-relative">
+            <mat-progress-spinner color="primary" mode="determinate" value="100">
+            </mat-progress-spinner>
+            <span class="spinner-text">
+                <b>Upload Completed</b>
+            </span>
+        </div>
+    </div>
+</ng-template> -->

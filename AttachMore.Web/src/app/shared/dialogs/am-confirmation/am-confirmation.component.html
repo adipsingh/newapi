@@ -1,0 +1,10 @@
+  <h1 mat-dialog-title class="text-center">{{ data.title? data.title : 'Delete Confirmation'}}</h1>
+  <mat-dialog-content class="text-center">
+    <h4 class="text-500"> {{data.message ? data.message: 'Are you sure? '}}</h4>
+    <p class="pdd-top-10 pdd-btm-20">  Do you really want to cancel the upload?</p>
+  </mat-dialog-content>
+  <mat-dialog-actions fxLayoutAlign="end" fxLayoutGap="10px">
+    <button mat-stroked-button color="primary" cdkFocusInitial [mat-dialog-close]="true" class="mat-stroked-button mat-primary">Yes, Cancel it</button>
+    <button mat-flat-button [mat-dialog-close]="false" class="mat-flat-button mat-primary">No</button>
+
+  </mat-dialog-actions>

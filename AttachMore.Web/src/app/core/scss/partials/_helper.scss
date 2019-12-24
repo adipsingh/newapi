@@ -1,0 +1,79 @@
+
+// Classes for height and width
+@each $prop, $abbrev in (width: w, height: h) {
+    
+    //Pixcels
+    @for $index from 0 to 128 {
+        $size: $index * 2;
+        $length: #{$size}px;
+
+        .#{$abbrev}-#{$size}{
+            #{$prop}: $length !important;
+            min-#{$prop}: $length !important;
+            max-#{$prop}: $length !important;
+        }
+    }
+
+    //Percentage
+    @for $index from 0 to 128 {
+        $size-p: $index * 5;
+        $length-p: $index * 5%;
+
+        .#{$abbrev}-#{$size-p}-p{
+            #{$prop}: $length-p !important;
+            min-#{$prop}: $length-p !important;
+            max-#{$prop}: $length-p !important;
+        }
+    }
+}
+
+
+
+// Classes for margin and padding
+@each $prop, $abbrev in (margin: m, padding: p) {
+    
+    @for $index from 0 through 64 {
+        $size: $index * 2;
+        $length: #{$size}px;
+
+        .#{$abbrev}-#{$size} {
+            #{$prop}: $length !important;
+        }
+    }
+
+    @for $index from 0 through 64 {
+        $size: $index * 2;
+        $length: #{$size}px;
+
+        .#{$abbrev}x-#{$size} {
+            #{$prop}-right: $length !important;
+            #{$prop}-left: $length !important;
+        }
+
+        .#{$abbrev}y-#{$size} {
+            #{$prop}-top: $length !important;
+            #{$prop}-bottom: $length !important;
+        }
+    }
+
+    @for $index from 0 through 64 {
+        $size: $index * 2;
+        $length: #{$size}px;
+
+        .#{$abbrev}t-#{$size} {
+            #{$prop}-top: $length !important;
+        }
+
+        .#{$abbrev}r-#{$size} {
+            #{$prop}-right: $length !important;
+        }
+
+        .#{$abbrev}b-#{$size} {
+            #{$prop}-bottom: $length !important;
+        }
+
+        .#{$abbrev}l-#{$size} {
+            #{$prop}-left: $length !important;
+        }
+    }
+}

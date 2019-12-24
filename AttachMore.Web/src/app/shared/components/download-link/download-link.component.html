@@ -1,0 +1,33 @@
+<label class="font-size-14 mrg-top-10" fxLayoutAlign="center">{{label}}</label>
+<div>
+  <div class="width-80 mrg-horizon-auto mrg-btm-10 d-link">
+    <input type="text" #linkInput class="form-control text-center" [value]="name" readonly="true">
+  </div>
+  <div class="copy-link">
+    <button mat-flat-button color="accent" (click)="copyLink()" (mouseout)="whenFocusOut()"
+      class="white-500-fg border-radius-0 text-center">
+      <span #copyLinkBtnToolTip class="copy-link-text" id="myTooltip">Copy to clipboard</span>
+      Copy Link
+    </button>
+    
+      <button mat-flat-button color="accent" data-toggle="dropdown"
+        class="white-500-fg border-radius-0 mrg-left-10 dropdown-toggle">
+        Share Link <span class="caret"></span></button>
+      <ul class="dropdown-menu">
+        <li>
+          <am-fb-like [url]="name"></am-fb-like>
+        </li>
+        <li>
+          <am-google-plus [url]="name"></am-google-plus>
+        </li>
+        <li>
+          <am-tweet [url]="name"></am-tweet>
+        </li>
+        <li>
+          <am-linked-in [url]="name"></am-linked-in>
+        </li>
+        
+      </ul>
+  </div>
+
+</div>

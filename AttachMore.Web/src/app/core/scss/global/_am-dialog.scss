@@ -1,0 +1,11 @@
+.cdk-overlay-container {
+    z-index: 1300;
+}
+
+.dialog-container {
+    .close-button {
+        width: 35px;
+        height: 35px;
+        line-height: 0px;
+    }
+}

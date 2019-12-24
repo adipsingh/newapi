@@ -1,0 +1,115 @@
+<div class="dialog-container">
+  <div fxLayoutAlign="space-between">
+    <button mat-icon-button [mat-dialog-close]="false" class="close-button">
+      <mat-icon>close</mat-icon>
+    </button>
+  </div>
+  <div class="row">
+    <div mat-dialog-content>
+      <div class="col-md-12 text-center ">
+        <div class=" upload-banner ">
+          <form [formGroup]="guestLinkForm" id="glForm" (ngSubmit)="saveGuestLink()">
+            <div class="m-10 p-10">
+              <h4 class="theme-text"> Guest Link</h4>
+              <am-title [name]="guestLink.linkName" (click)="$event.stopPropagation()" (whenSaveClicked)="guestLink.linkName = $event"></am-title>
+              <div>
+                <am-download-link [name]="guestLink.linkUrl" label="Here is the Guest Link:"></am-download-link>
+                <label class="pt-16 text-center" fxLayoutAlign="start">Link Options:</label>
+                <mat-accordion>
+                  <mat-expansion-panel>
+                    <mat-expansion-panel-header>
+                      <mat-panel-title class="font-weight-600">
+                        Expire
+                      </mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <!-- <form class="mrg-top-20"> -->
+                    <div formGroupName="expirySettings">
+                      <div class="text-center form-group mrg-top-20">
+                        <label>Upload Limit</label>
+                        <div class="form-group width-30 display-inline mrg-left-10">
+                          <input type="text" formControlName="uploadLimit" class="form-control">
+
+                        </div>
+                      </div>
+                      <div class="text-center form-group">
+                        <label>Number of Usage</label>
+                        <div class="form-group width-30 display-inline mrg-left-10">
+                          <input type="text" class="form-control" formControlName="numberOfUses">
+                        </div>
+                      </div>
+
+                      <div class="text-center form-group">
+                        <label>Expiration Date</label>
+                        <div class="form-group width-30 display-inline mrg-left-10">
+
+                          <input type="text" class="form-control" formControlName="expirationDate" [minDate]="currentDate"
+                            placeholder="yyyy-mm-dd" bsDatepicker>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- </form> -->
+                  </mat-expansion-panel>
+                  <mat-expansion-panel>
+                    <mat-expansion-panel-header>
+                      <mat-panel-title>
+                        Notify
+                      </mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <!-- <am-notification-setting [settings]="notificationSettings"></am-notification-setting> -->
+                    <div class="mrg-horizon-auto optionsItems" formGroupName="notifySettings">
+                      <mat-slide-toggle class="mrg-right-auto pdd-btm-40" labelPosition="before"
+                        formControlName="onDownloaded">When downloaded</mat-slide-toggle>
+                      <mat-slide-toggle class="mrg-right-auto pdd-btm-40" labelPosition="before"
+                        formControlName="onExpired">When expired</mat-slide-toggle>
+                      <br>
+                      <mat-slide-toggle class="mrg-right-auto pdd-btm-40 relative" labelPosition="before"
+                        formControlName="byEmail">By email
+                        <span class="notify_mail theme-color">abc@gmail.com</span>
+                      </mat-slide-toggle>
+                      <br>
+                      <mat-slide-toggle class="mrg-right-auto  pdd-btm-40" labelPosition="before"
+                        formControlName="byText">By text</mat-slide-toggle>
+                    </div>
+                  </mat-expansion-panel>
+                  <mat-expansion-panel>
+                    <mat-expansion-panel-header>
+                      <mat-panel-title>
+                        Secure
+                      </mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <!-- <am-guest-notification-setting></am-guest-notification-setting> -->
+                    <div class="mrg-horizon-auto optionsItems" formGroupName="securitySettings">
+                      <p>Require Guest to enter the following information prior to uploading files</p>
+                      <mat-slide-toggle class="mrg-right-auto pdd-btm-40" labelPosition="before"
+                        formControlName="email">Email</mat-slide-toggle>
+                      <mat-slide-toggle class="mrg-right-auto pdd-btm-40" labelPosition="before" formControlName="name">
+                        Name</mat-slide-toggle><br>
+                      <mat-slide-toggle class="mrg-right-auto pdd-btm-40" labelPosition="before"
+                        formControlName="company">Company</mat-slide-toggle><br>
+                      <mat-slide-toggle class="mrg-right-auto pdd-btm-40" labelPosition="before"
+                        formControlName="phone">Phone</mat-slide-toggle>
+                      <mat-slide-toggle class="mrg-right-auto pdd-btm-40" labelPosition="before"
+                        formControlName="password">Password</mat-slide-toggle>
+                      <p>Password Protect the Download Page</p>
+                      <mat-slide-toggle class="mrg-right-auto pdd-btm-40" labelPosition="before"
+                        formControlName="passwordProtectedPage">Password</mat-slide-toggle>
+                    </div>
+                    <div fxLayoutAlign="center" class="mrg-top-20">
+                      <button mat-flat-button color="accent" class="white-500-fg border-radius-0">Save</button>
+                    </div>
+
+                  </mat-expansion-panel>
+                </mat-accordion>
+
+                <button mat-flat-button color="primary" form="glForm"
+                  class="border-radius-0  white-500-fg mrg-right-10 mrg-top-30" target="_blank">
+                  Save
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

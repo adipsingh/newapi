@@ -1,0 +1,28 @@
+<div class="dialog-container">
+  <div fxLayoutAlign="space-between">
+    <div class="text-center mrg-0">
+      <h1 mat-dialog-title>Following information required to download the file</h1>
+    </div>
+    <button mat-icon-button [mat-dialog-close]="null" class="close-button">
+      <mat-icon>close</mat-icon>
+    </button>
+  </div>
+  <div mat-dialog-content>
+    <form #downloadForm="ngForm" fxLayout="column" fxLayoutAlign="start">
+      <mat-form-field *ngIf="data.accessEmail">
+        <input matInput placeholder="Access Email" name="accessEmail" email #accessEmail="ngModel" [(ngModel)]="model.accessEmail">
+        <mat-error>
+          <am-input-error-msg [control]="accessEmail"></am-input-error-msg>
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field *ngIf="data.accessPassword">
+        <input matInput type="password" placeholder="Password" name="password" #password="ngModel" [(ngModel)]="model.password">
+      </mat-form-field>
+    </form>
+  </div>
+  <div mat-dialog-actions class="mt-20">
+    <button mat-raised-button color="primary" class="border-radius-0 theme-color-bg white-500-fg" 
+      [disabled]="downloadForm.invalid"
+      [mat-dialog-close]="downloadForm.value">Next</button>
+  </div>
+</div>

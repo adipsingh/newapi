@@ -1,0 +1,54 @@
+.min-height-35{
+    min-height: 35px;
+}
+.clearfix
+{
+    clear:both;
+}
+.line-height-40
+{
+    line-height:40px;
+}
+.vrfy-mail .mat-form-field-appearance-legacy .mat-form-field-label,
+.vrfy-mail .mat-form-field.mat-focused .mat-form-field-label,
+.vrfy-mail .mat-input-element.mat-form-field-autofill-control
+{color:#fff;}
+.mat-form-field-appearance-legacy .mat-form-field-can-float,
+.mat-form-field-should-float .mat-form-field-label
+{
+    color:#fff
+}
+.mat-form-field-appearance-legacy .mat-form-field-label
+{
+    color: #fff;
+}
+.alert.r-error {
+    background: transparent;
+    border: none;
+    padding: 3px 0 0;
+    color: #ee1e1a;
+    font-size: 16px;
+        margin-bottom: 0;
+}
+.nxt-btn
+{
+  width:95px;
+  margin-left:8px;
+}
+input
+{
+    font-family: FontAwesome, Montserrat, sans-serif;;
+}
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    font-size:24px;
+  }
+  ::-moz-placeholder { /* Firefox 19+ */
+    font-size:24px;
+  }
+  :-ms-input-placeholder { /* IE 10+ */
+    font-size:24px;
+  }
+  :-moz-placeholder { /* Firefox 18- */
+    font-size:24px;
+  }
